@@ -11,9 +11,10 @@ import { useState } from "react";
 import BusinessJobs from "./pages/Business/Jobs";
 import BusinessRequests from "./pages/Business/Requests";
 import BusinessOngoing from "./pages/Business/Ongoing";
-
+import CreatorTodo from "./pages/Creator/TodoList.jsx";
 import BusinessPosts from "./pages/Business/Posts";
-import theme from "./theme";
+import BusinessTodo from "./pages/Business/TodoList.jsx";
+import theme from "./theme"; 
 import CreatorJobs from "./pages/Creator/Jobs";
 import CreatorRequests from "./pages/Creator/Requests";
 import CreatorOngoing from "./pages/Creator/Ongoing";
@@ -110,6 +111,14 @@ function App() {
             }
           />
           <Route
+            path="/creator/dashboard/ongoing/workspace/todo"
+            element={
+              <ProtectedRoute1>
+                <CreatorTodo />
+              </ProtectedRoute1>
+            }
+          />
+          <Route
             path="/creator/dashboard/post"
             element={
               <ProtectedRoute1>
@@ -158,6 +167,15 @@ function App() {
             element={
               <ProtectedRoute2>
                 <BusinessWorkspace />
+              </ProtectedRoute2>
+            }
+          />
+          
+          <Route
+            path="/business/dashboard/ongoing/workspace/todo"
+            element={
+              <ProtectedRoute2>
+                <BusinessTodo />
               </ProtectedRoute2>
             }
           />
